@@ -1,0 +1,141 @@
+@font-face {
+  font-family: "fraunces-bold";
+  src: url(./assets/fonts/Fraunces/Fraunces_72pt-Bold.ttf) format("truetype");
+}
+@font-face {
+  font-family: "montserrat-bold";
+  src: url(./assets/fonts/Montserrat/Montserrat-Bold.ttf) format("truetype");
+}
+@font-face {
+  font-family: "montserrat-medium";
+  src: url(./assets/fonts/Montserrat/Montserrat-Medium.ttf) format("truetype");
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --Black: hsl(212, 21%, 14%);
+  --category: hsl(228, 12%, 48%);
+  --bg: rgb(243, 234, 227);
+  --White: hsl(0, 0%, 100%);
+  --price: hsl(158, 36%, 37%);
+  --Green_700: hsl(158, 42%, 18%);
+}
+
+body {
+  background-color: var(--bg);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+main {
+  display: flex;
+  background-color: white;
+  width: 90%;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+  max-width: 540px;
+  border-radius: 8px;
+  overflow: auto;
+}
+
+.product-content {
+  padding: 1em;
+  max-width: 256px;
+  overflow: auto;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.desktop-img {
+  width: 95%;
+  aspect-ratio: 9 / 15;
+  display: block;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.desktop-img-container,
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-img {
+  display: none;
+  width: 100%;
+  aspect-ratio: 12 / 9;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+h4 {
+  font-family: "montserrat-medium", sans-serif;
+  font-size: 0.625rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--category);
+}
+
+h1 {
+  font-family: "fraunces-bold", sans-serif;
+  font-size: 2rem;
+}
+
+.product-description {
+  font-family: "montserrat-medium", sans-serif;
+  color: var(--category);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.new-price {
+  font-family: "fraunces-bold", sans-serif;
+  font-size: 2rem;
+  color: var(--price);
+}
+
+.new-price::after {
+  content: "$169.99";
+  font-family: "montserrat-medium", sans-serif;
+  font-size: 0.75rem;
+  color: var(--category);
+  text-decoration: line-through;
+  position: relative;
+  right: 0;
+  margin-left: 2em;
+  bottom: 0.5em;
+}
+
+button {
+  padding: 0.8em 0;
+  width: 100%;
+  color: white;
+  font-family: "montserrat-medium", sans-serif;
+  border: none;
+  background-color: var(--price);
+  border-radius: 8px;
+  text-align: center;
+}
+
+@media (max-width: 560px) {
+  main {
+    flex-direction: column;
+  }
+
+  .desktop-img {
+    display: none;
+  }
+
+  .mobile-img {
+    display: block;
+  }
+}
