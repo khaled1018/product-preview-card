@@ -23,7 +23,7 @@
   --bg: rgb(243, 234, 227);
   --White: hsl(0, 0%, 100%);
   --price: hsl(158, 36%, 37%);
-  --Green_700: hsl(158, 42%, 18%);
+  --btn_hover: hsl(158, 42%, 18%);
 }
 
 body {
@@ -63,12 +63,6 @@ main {
   border-bottom-left-radius: 8px;
 }
 
-.desktop-img-container,
-figure {
-  margin: 0;
-  padding: 0;
-}
-
 .mobile-img {
   display: none;
   width: 100%;
@@ -88,6 +82,7 @@ h4 {
 h1 {
   font-family: "fraunces-bold", sans-serif;
   font-size: 2rem;
+  margin: 0.5em 0;
 }
 
 .product-description {
@@ -95,12 +90,14 @@ h1 {
   color: var(--category);
   font-size: 0.8rem;
   line-height: 1.5;
+  margin: 0.5em 0;
 }
 
 .new-price {
   font-family: "fraunces-bold", sans-serif;
   font-size: 2rem;
   color: var(--price);
+  margin: 0.5em 0;
 }
 
 .new-price::after {
@@ -124,11 +121,26 @@ button {
   background-color: var(--price);
   border-radius: 8px;
   text-align: center;
+  cursor: pointer;
+}
+
+button img {
+  margin-right: 8px;
+}
+
+button:hover {
+  background-color: var(--btn_hover);
 }
 
 @media (max-width: 560px) {
   main {
     flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .product-content {
+    max-width: 450px;
+    min-height: 30vh;
   }
 
   .desktop-img {
